@@ -37,8 +37,11 @@ const DateTime = ({current, lat, lon, timezone}) => {
         }, 1000);
     }, [])
     return (
-        <View style={styles.container}>  
+        <View style={styles.container}> 
            <View>
+               <View>
+                   <Text style={styles.header}>WEATHER</Text>
+               </View>
                <View>
                    <Text style={styles.heading}>{time}</Text>
                </View>
@@ -52,7 +55,7 @@ const DateTime = ({current, lat, lon, timezone}) => {
                </View>
            </View>
            <View style={styles.rightAlign}>
-               <Text style={styles.timezone}>{timezone}</Text>
+               <Text style={styles.timezone}>Turkey/Edirne</Text>
                <Text style={styles.latlong}>{lat}N {lon}E</Text>
            </View>
         </View>
@@ -60,16 +63,28 @@ const DateTime = ({current, lat, lon, timezone}) => {
 }
 
 const styles = StyleSheet.create({
+    header:{
+        fontSize: 20,
+        color: `#b0c4de`,
+        backgroundColor: '#3c3c44dd',
+        padding:10,
+        textAlign:'center',
+        borderRadius:50,
+        fontWeight:'bold',
+        marginLeft:130,
+        marginTop:30,
+        fontWeight:'bold'
+
+    },
     container: {
         flex: 1.5,
         flexDirection: "row",
         justifyContent: "space-between",
-        padding:10
+        padding:10,
     },
     heading: {
         fontSize: 45,
         color: '#fff',
-        marginTop: 40,
         marginLeft: 10,
     },
     subheading:{
@@ -83,13 +98,13 @@ const styles = StyleSheet.create({
     timezone: {
         fontSize: 20,
         color: '#fff',
-        marginTop: 50,
-        marginRight: 10
+        marginTop: 80,
+        marginRight:20
     },
     latlong:{
-        fontSize:16,
-        color:'white',
-        fontWeight: '700'
+        fontSize:15,
+        color:'#fff',
+        fontWeight: 'bold',
     },
     weatherItemContainer: {
         backgroundColor: '#18181bdd',

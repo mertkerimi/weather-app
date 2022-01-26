@@ -3,12 +3,12 @@ import React, {useEffect, useState}from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import * as Location from 'expo-location';
 import DateTime from './components/DateTime'
-import WeatherScroll from './components/WeatherScroll'
-import FutureForecast from './components/FutureForecast';
+import WeatherScroll from './components/DailyWeather'
+import FutureForecast from './components/WeatherForecast';
 
 
 const API_KEY ='49cc8c821cd2aff9af04c9f98c36eb74';
-const img = require('./assets/image.png')
+const img = require('./assets/weather-app-background.jpg')
 export default function App() {
   const [data, setData] = useState({});
 
@@ -16,7 +16,7 @@ export default function App() {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
-        fetchDataFromApi("40.7128", "-74.0060")
+        fetchDataFromApi("")
         return;
       }
 

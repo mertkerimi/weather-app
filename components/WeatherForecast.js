@@ -3,36 +3,24 @@ import {View, Text, Image,ScrollView, StyleSheet} from 'react-native'
 import moment from 'moment-timezone'
 
 
-const FutureForecast = ({weatherData}) => {
+const WeatherForecast = ({weatherData}) => {
 
     return (
         <ScrollView horizontal={true} style={styles.scrollView}>
-            <View style={{flexDirection: 'row'}}>
-
-            {
+            <View style={{flexDirection: 'row'}}>{
                 weatherData && weatherData.length > 0 ? 
-
-                weatherData.map((weatherData, idx) => (
-
-                    idx !== 0 &&  <FutureForecastItem key={idx} forecastItem={weatherData}/>
-                ))
-
-                :
-
-                <View/>
+                weatherData.map((weatherData, idx) => (idx !== 0 &&  <WeatherForecastItem key={idx} forecastItem={weatherData}/>)):
+            <View/>
             }
-          
-            
-
         </View>
         </ScrollView>
     )
 }
 
-const FutureForecastItem = ({forecastItem}) => {
+const WeatherForecastItem = ({forecastItem}) => {
     const img = {uri: "http://openweathermap.org/img/wn/"+forecastItem.weather[0].icon+"@2x.png"}
     return (
-        <View  style={styles.futureForecastItemContainer}>
+        <View  style={styles.weatherForecastItemContainer}>
             <Text  style={styles.day}>{moment(forecastItem.dt * 1000).format('ddd')}</Text>
             <Image source={img} style={styles.image} />
             <Text  style={styles.temp}>Day: {forecastItem.temp.day}&#176;C</Text>
@@ -52,7 +40,7 @@ const styles = StyleSheet.create({
         width:100,
         height:100
     },
-    futureForecastItemContainer: {
+    weatherForecastItemContainer: {
         flex:1,
         justifyContent: 'center',
         backgroundColor: '#00000033',
@@ -82,6 +70,6 @@ const styles = StyleSheet.create({
     
 });   
 
-export default FutureForecast;
+export default WeatherForecast;
 
 
