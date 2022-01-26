@@ -3,8 +3,9 @@ import React, {useEffect, useState}from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import * as Location from 'expo-location';
 import DateTime from './components/DateTime'
-import WeatherScroll from './components/DailyWeather'
-import FutureForecast from './components/WeatherForecast';
+import DailyWeather from './components/DailyWeather'
+import WeatherForecast from './components/WeatherForecast';
+
 
 
 const API_KEY ='49cc8c821cd2aff9af04c9f98c36eb74';
@@ -40,8 +41,8 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={img} style={styles.image} >
         <DateTime current={data.current} timezone={data.timezone} lat={data.lat} lon={data.lon}/>
-        <WeatherScroll weatherData={data.daily}/>
-        <FutureForecast weatherData={data.daily}/>
+        <DailyWeather weatherData={data.daily}/>
+        <WeatherForecast weatherData={data.daily}/>
       </ImageBackground>
     </View>
   );
