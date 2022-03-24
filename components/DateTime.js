@@ -55,7 +55,7 @@ const DateTime = ({current, lat, lon, timezone}) => {
                </View>
            </View>
            <View style={styles.rightAlign}>
-               <Text style={styles.timezone}>Turkey/Edirne</Text>
+               <Text style={styles.timezone}>Europe/Edirne</Text>
                <Text style={styles.latlong}>{lat}N {lon}E</Text>
            </View>
         </View>

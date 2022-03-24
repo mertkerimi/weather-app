@@ -1,6 +1,8 @@
 import React from 'react'
 import {View, ScrollView, Image, Text, StyleSheet} from 'react-native'
 import moment from 'moment-timezone'
+
+
 const DailyWeather= ({weatherData}) => {
     if(weatherData && weatherData.length > 0){
         const img = {uri: 'http://openweathermap.org/img/wn/'+ weatherData[0].weather[0].icon +'@4x.png'}
@@ -19,10 +21,8 @@ const DailyWeather= ({weatherData}) => {
             <View>
 
             </View>
-
         )
     }
-
 }
 
 const styles = StyleSheet.create({

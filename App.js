@@ -1,15 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState}from 'react';
+"import React, {useEffect, useState}from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import * as Location from 'expo-location';
 import DateTime from './components/DateTime'
 import DailyWeather from './components/DailyWeather'
 import WeatherForecast from './components/WeatherForecast';
 
+const img = require('./assets/weather-app-background.jpg')
 
 
 const API_KEY ='49cc8c821cd2aff9af04c9f98c36eb74';
-const img = require('./assets/weather-app-background.jpg')
 export default function App() {
   const [data, setData] = useState({});
 
@@ -30,7 +29,6 @@ export default function App() {
     if(latitude && longitude) {
       fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
-      // console.log(data)
       setData(data)
       })
     }

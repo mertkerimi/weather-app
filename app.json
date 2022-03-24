@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "in.asishgeorge.weatherapp",
+      "package": "in.mertkerimi.weatherapp",
       "versionCode": 1,
       "permissions":["LOCATION"]
     },
