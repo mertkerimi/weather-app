@@ -1,4 +1,4 @@
-"import React, {useEffect, useState}from 'react';
+import React, {useEffect, useState}from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import * as Location from 'expo-location';
 import DateTime from './components/DateTime'
